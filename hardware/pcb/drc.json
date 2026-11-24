@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/drc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-11-12T02:08:55",
+    "date": "2026-11-23T22:05:49",
     "ignored_checks": [
         {
             "description": "Footprint has no courtyard defined",
@@ -505,66 +505,43 @@
             "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0000 mm)",
             "items": [
                 {
-                    "description": "Segmento de Q3 en F.Silkscreen",
+                    "description": "Campo de referencia de J2",
                     "pos": {
-                        "x": 11.24,
-                        "y": 37.94
+                        "x": 59.478515,
+                        "y": 43.655
                     },
-                    "uuid": "88b34310-0238-4775-b55d-a5df505f4483"
+                    "uuid": "0426a5b7-a98d-41df-92d2-3190990cda62"
                 },
                 {
-                    "description": "Campo de referencia de Q3",
+                    "description": "Segmento de Q6 en F.Silkscreen",
                     "pos": {
-                        "x": 12.0,
-                        "y": 37.3
+                        "x": 59.44,
+                        "y": 43.26
                     },
-                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
+                    "uuid": "aabac0eb-a42d-4226-ad39-7610be0dd925"
                 }
             ],
             "severity": "warning",
             "type": "silk_overlap"
         },
         {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1441 mm)",
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0000 mm)",
             "items": [
                 {
-                    "description": "Segmento de Q3 en F.Silkscreen",
+                    "description": "Campo de referencia de J2",
                     "pos": {
-                        "x": 12.76,
-                        "y": 37.94
+                        "x": 59.478515,
+                        "y": 43.655
                     },
-                    "uuid": "1e188c88-a504-4971-b575-88335711a3cb"
+                    "uuid": "0426a5b7-a98d-41df-92d2-3190990cda62"
                 },
                 {
-                    "description": "Campo de referencia de Q3",
+                    "description": "Segmento de Q6 en F.Silkscreen",
                     "pos": {
-                        "x": 12.0,
-                        "y": 37.3
+                        "x": 59.44,
+                        "y": 43.26
                     },
-                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
-                }
-            ],
-            "severity": "warning",
-            "type": "silk_overlap"
-        },
-        {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1136 mm)",
-            "items": [
-                {
-                    "description": "Segmento de Q3 en F.Silkscreen",
-                    "pos": {
-                        "x": 11.24,
-                        "y": 37.99
-                    },
-                    "uuid": "1d639f09-b714-417e-9613-5fd0a59e78b5"
-                },
-                {
-                    "description": "Campo de referencia de Q3",
-                    "pos": {
-                        "x": 12.0,
-                        "y": 37.3
-                    },
-                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
+                    "uuid": "b5ac9b83-a3b7-41ed-9d8c-6d7dd1a361d0"
                 }
             ],
             "severity": "warning",
@@ -594,7 +571,7 @@
             "type": "silk_overlap"
         },
         {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0237 mm)",
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0714 mm)",
             "items": [
                 {
                     "description": "Campo de referencia de FID2",
@@ -640,7 +617,7 @@
             "type": "silk_overlap"
         },
         {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0196 mm)",
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0718 mm)",
             "items": [
                 {
                     "description": "Campo de referencia de C44",
@@ -651,12 +628,12 @@
                     "uuid": "71a6e9ce-865a-49c3-9586-fc8e92202e9e"
                 },
                 {
-                    "description": "Segmento de R24 en F.Silkscreen",
+                    "description": "Segmento de C49 en F.Silkscreen",
                     "pos": {
-                        "x": 60.662742,
-                        "y": 15.8775
+                        "x": 60.91,
+                        "y": 12.942164
                     },
-                    "uuid": "a3564fcf-e089-40b1-86b5-453559bc3d0c"
+                    "uuid": "c0833c30-def5-48b2-af9b-20f7cec2be47"
                 }
             ],
             "severity": "warning",
@@ -686,7 +663,7 @@
             "type": "silk_overlap"
         },
         {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0718 mm)",
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0000 mm)",
             "items": [
                 {
                     "description": "Campo de referencia de C44",
@@ -697,12 +674,12 @@
                     "uuid": "71a6e9ce-865a-49c3-9586-fc8e92202e9e"
                 },
                 {
-                    "description": "Segmento de C49 en F.Silkscreen",
+                    "description": "Segmento de R24 en F.Silkscreen",
                     "pos": {
-                        "x": 60.91,
-                        "y": 12.942164
+                        "x": 60.662742,
+                        "y": 15.8775
                     },
-                    "uuid": "c0833c30-def5-48b2-af9b-20f7cec2be47"
+                    "uuid": "a3564fcf-e089-40b1-86b5-453559bc3d0c"
                 }
             ],
             "severity": "warning",
@@ -710,52 +687,6 @@
         },
         {
             "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0000 mm)",
-            "items": [
-                {
-                    "description": "Campo de referencia de J2",
-                    "pos": {
-                        "x": 59.478515,
-                        "y": 43.655
-                    },
-                    "uuid": "0426a5b7-a98d-41df-92d2-3190990cda62"
-                },
-                {
-                    "description": "Segmento de Q6 en F.Silkscreen",
-                    "pos": {
-                        "x": 59.44,
-                        "y": 43.26
-                    },
-                    "uuid": "aabac0eb-a42d-4226-ad39-7610be0dd925"
-                }
-            ],
-            "severity": "warning",
-            "type": "silk_overlap"
-        },
-        {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0000 mm)",
-            "items": [
-                {
-                    "description": "Campo de referencia de J2",
-                    "pos": {
-                        "x": 59.478515,
-                        "y": 43.655
-                    },
-                    "uuid": "0426a5b7-a98d-41df-92d2-3190990cda62"
-                },
-                {
-                    "description": "Segmento de Q6 en F.Silkscreen",
-                    "pos": {
-                        "x": 59.44,
-                        "y": 43.26
-                    },
-                    "uuid": "b5ac9b83-a3b7-41ed-9d8c-6d7dd1a361d0"
-                }
-            ],
-            "severity": "warning",
-            "type": "silk_overlap"
-        },
-        {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1309 mm)",
             "items": [
                 {
                     "description": "Segmento de R25 en F.Silkscreen",
@@ -778,23 +709,69 @@
             "type": "silk_overlap"
         },
         {
-            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1137 mm)",
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.0965 mm)",
             "items": [
                 {
-                    "description": "Texto de PCB 'capri-slate v0.2.2 2026-11' en B.Silkscreen",
+                    "description": "Segmento de Q3 en F.Silkscreen",
                     "pos": {
-                        "x": -13.0,
-                        "y": 19.0
+                        "x": 11.24,
+                        "y": 37.94
                     },
-                    "uuid": "58f45849-c315-47d1-9ad7-64c9d2ac3bbd"
+                    "uuid": "88b34310-0238-4775-b55d-a5df505f4483"
                 },
                 {
-                    "description": "Texto de PCB 'EPD 24P: GDEY075T7 7.5in' en B.Silkscreen",
+                    "description": "Campo de referencia de Q3",
                     "pos": {
-                        "x": -13.0,
-                        "y": 20.6
+                        "x": 12.0,
+                        "y": 37.3
                     },
-                    "uuid": "6359814f-2fe8-43a9-bf5d-5c887fefcce4"
+                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1136 mm)",
+            "items": [
+                {
+                    "description": "Segmento de Q3 en F.Silkscreen",
+                    "pos": {
+                        "x": 11.24,
+                        "y": 37.99
+                    },
+                    "uuid": "1d639f09-b714-417e-9613-5fd0a59e78b5"
+                },
+                {
+                    "description": "Campo de referencia de Q3",
+                    "pos": {
+                        "x": 12.0,
+                        "y": 37.3
+                    },
+                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Margen de serigrafía (restricciones de configuración de placa para serigrafía margen 0.1500 mm; real 0.1441 mm)",
+            "items": [
+                {
+                    "description": "Segmento de Q3 en F.Silkscreen",
+                    "pos": {
+                        "x": 12.76,
+                        "y": 37.94
+                    },
+                    "uuid": "1e188c88-a504-4971-b575-88335711a3cb"
+                },
+                {
+                    "description": "Campo de referencia de Q3",
+                    "pos": {
+                        "x": 12.0,
+                        "y": 37.3
+                    },
+                    "uuid": "9cd1c2f5-96fe-4cd4-a750-e04955fefc1c"
                 }
             ],
             "severity": "warning",
