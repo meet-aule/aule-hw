@@ -33,7 +33,7 @@ ordering/     How to check JLCPCB's placement preview, part by part, before payi
 
 ## Fabrication (`fab/`)
 
-The exact files of our first order. Upload the Gerber files as a ZIP, then `BOM.csv` and `CPL.csv` for assembly. `CPL-rotations.txt` explains where each rotation comes from. Read [`ordering/`](ordering/README.md) before confirming the order: the placement preview is the one check that cannot be done from the files.
+The files of our first order (12 November 2026), with one change since: the silkscreen text now says «aule». The files exactly as ordered are at commit [`68c8f9a`](https://github.com/meet-aule/aule-hw/tree/68c8f9a/hardware/fab). Upload the Gerber files as a ZIP, then `BOM.csv` and `CPL.csv` for assembly. `CPL-rotations.txt` explains where each rotation comes from. Read [`ordering/`](ordering/README.md) before confirming the order: the placement preview is the one check that cannot be done from the files.
 
 ## Enclosure (`enclosure/`)
 
