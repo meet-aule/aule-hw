@@ -1,0 +1,104 @@
+# Temporary, for PR #3: exports the Gerbers, drill files and DRC report of main's board and of this
+# branch's board with the KiCad that made the files in hardware/fab. Remove before merging.
+name: fab-export
+
+on:
+  push:
+    branches: [fix/board-silkscreen-aule]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    container:
+      # kicad/kicad:10.0.7, the version named in the headers of today's files
+      image: kicad/kicad@sha256:3224d1bf143185ecc1bd3a1082a36f37f0f4e59d707983a16515a845e3737fc6
+      # root, to add git and a Spanish locale
+      options: --user root
+    defaults:
+      run:
+        shell: bash
+    env:
+      # main when this branch was cut; its board is the one hardware/fab was made from
+      MAIN_SHA: 68c8f9a9cc623a4c32d81aabc4d451f5adc5123b
+      MAIN_BOARD_SHA256: 7ce130c125e8a2e92c3b31eeb5157e0a999e02aa96b15daeebdda404f270797d
+    steps:
+      - name: Add git and the es_PE locale
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends git locales
+          localedef -i es_PE -c -f UTF-8 es_PE.UTF-8
+          kicad-cli version --format about
+          echo "es_PE: $(LC_ALL=es_PE.UTF-8 locale -k decimal_point)"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Export both boards
+        env:
+          # The image's prepared config and library tables
+          HOME: /home/kicad
+          # Today's files came from a Mac set to Spanish (Peru), on Lima time: same report text,
+          # numbers with a decimal point, and creation dates with the same offset.
+          TZ: "<-05>5"
+        run: |
+          set -euo pipefail
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          unset LC_ALL
+          export LANG=es_PE.UTF-8 LANGUAGE=es_PE:es LC_NUMERIC=C.UTF-8
+          board=esp32-audio-module.kicad_pcb
+          layers=F.Cu,In1.Cu,In2.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.SilkS,B.SilkS,Edge.Cuts
+
+          mkdir -p work/main work/branch out
+          git archive "$MAIN_SHA" hardware/pcb | tar -x -C work/main
+          git archive HEAD hardware/pcb | tar -x -C work/branch
+          echo "$MAIN_BOARD_SHA256  work/main/hardware/pcb/$board" | sha256sum -c -
+
+          # The same commands and options that made today's files
+          export_board() {
+            local out="$GITHUB_WORKSPACE/out/$1"
+            mkdir -p "$out"
+            cd "$GITHUB_WORKSPACE/work/$1/hardware/pcb"
+            kicad-cli pcb export gerbers --layers "$layers" --precision 6 --subtract-soldermask \
+              -o "$out/" "$board"
+            kicad-cli pcb export drill --format excellon --excellon-units mm --excellon-zeros-format decimal \
+              --excellon-oval-format alternate --excellon-separate-th --drill-origin absolute \
+              --generate-map --map-format gerberx2 -o "$out/" "$board"
+            kicad-cli pcb drc --format json --severity-all --refill-zones --schematic-parity \
+              -o "$out/drc.json" "$board"
+            cd "$GITHUB_WORKSPACE"
+          }
+          export_board main
+          export_board branch
+
+          # For comparison only: the plot settings stored in the board file
+          mkdir -p out/main-board-plot-params
+          (cd work/main/hardware/pcb && kicad-cli pcb export gerbers --board-plot-params \
+            -o "$GITHUB_WORKSPACE/out/main-board-plot-params/" "$board")
+
+          echo "DRC description language check: $(grep -c 'Serigraf' out/main/drc.json || true) Spanish lines"
+          (cd out && sha256sum -- */*)
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: fab-main
+          path: out/main
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: fab-branch
+          path: out/branch
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: main-board-plot-params
+          path: out/main-board-plot-params
+          if-no-files-found: error
