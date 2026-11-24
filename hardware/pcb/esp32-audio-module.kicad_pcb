@@ -35590,7 +35590,7 @@
 			)
 		)
 	)
-	(gr_text "capri-slate v0.2.2"
+	(gr_text "aule v0.2.2"
 		(at -3.1 30.5 90)
 		(layer "F.SilkS")
 		(uuid "54476d3f-c7c4-4a99-b522-1b56340d8ee0")
@@ -35612,7 +35612,7 @@
 			)
 		)
 	)
-	(gr_text "capri-slate v0.2.2 2026-11"
+	(gr_text "aule v0.2.2 2026-11"
 		(at -13 19 0)
 		(layer "B.SilkS")
 		(uuid "58f45849-c315-47d1-9ad7-64c9d2ac3bbd")
@@ -35684,7 +35684,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "capri-mini v1.7"
+	(gr_text "aule-mini v1.7"
 		(at 27.8 17.4 0)
 		(layer "B.SilkS")
 		(uuid "2b13275c-b806-4ee7-b66c-2bf384ff7a1a")
